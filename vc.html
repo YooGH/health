@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 果蔬 </title>
+  <link rel="bookmark" href="./img/icon/favicon.ico">
+	<link rel="shortcut icon" href="./img/icon/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+  <link rel="stylesheet" type="text/css" href="./css/common.css" />
+  <style type="text/css">
+    .dialog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="main-flex">
+      <div class="col-12" v-for="item of Fruit" :key="item.id" :class="item.bg" :style="`height: ${availHeight/2-30}px`"> 
+        <h1 class="text-white" @click="closeDialog(item)"> {{ item.categoryName }} </h1>
+        <section class="category">
+          <a class="text-a" :class="{'text-white': item.categoryNumber.includes(nowMonth)}" target="_blank" :href="itemSon.href" v-for="itemSon of item.children" :key="itemSon.id"> {{ itemSon.showId ? itemSon.id+'. ' : '' }}{{ itemSon.name }} </a>
+        </section>
+      </div>
+    </div>
+
+
+    <!-- 遮罩 -->
+    <div @click="closeDialog(false)" v-show="newDialog" class="dialog" :class="nowObj.bg">
+      <div>
+        <h1 class="text-white"> {{ nowObj.categoryName }} </h1>
+        <section class="category">
+          <a class="text-a" :class="{'text-white': nowObj.categoryNumber.includes(nowMonth)}" target="_blank" :href="itemSon.href" v-for="itemSon of nowObj.children" :key="itemSon.id"> {{ itemSon.showId ? itemSon.id+'. ' : '' }}{{ itemSon.name }} </a>
+        </section>
+      </div>
+    </div>
+
+    <!-- https://jingyan.baidu.com/article/29697b9160a270ab20de3cb1.html<br>
+		https://jingyan.baidu.com/article/925f8cb8f9ac2bc0dde05684.html -->
+    <!-- <footer class='footer'>
+      <div class="main-flex">
+        <div class="col-md-6 text-center"><h2><a class="active" href="javascript:;">水果</a></h2></div>
+        <div class="col-md-6 text-center"><h2><a href="./v.html">蔬菜</a></h2></div>
+      </div>
+    </footer> -->
+  </div>
+
+  <script src="./js/vue.global.js"></script>
+  <script src="./js/vue2.6.js"></script>
+  <script src="./vc.js"></script>
+  <script>
+    const App = new Vue({
+      el: '#app',
+      data() {
+        return {
+          nowObj: {},
+          newDialog: true,
+          nowMonth: 0,
+          availHeight: 0,
+          Fruit: Fruit,
+        }
+      },
+      mounted() {
+        this.availHeight = window.screen.availHeight;
+        this.nowMonth = new Date().getMonth() + 1;
+        for(let item of Fruit) {
+          if(item.categoryNumber.includes(this.nowMonth)) {
+            this.nowObj = item;
+          }
+        }
+      },
+      methods: {
+        closeDialog(info) {
+          if(info) {
+            console.log(info)
+            this.nowObj = info;
+            this.newDialog = true;
+          } else {
+            this.newDialog = false;
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
