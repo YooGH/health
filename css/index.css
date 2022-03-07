@@ -28,7 +28,7 @@ h1 {
   font-size: 12px;
   line-height: 24px;
   text-decoration:none;
-  color: #060a09;
+  color: #ededed;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -82,12 +82,15 @@ h1 {
 
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .col-sm {
     flex: 0 0 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 14px;
+  }
+  h1 {
+    font-size: 20px;
   }
 }

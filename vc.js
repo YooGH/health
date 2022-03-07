@@ -17,6 +17,7 @@ const Fruit = [
       {id: 5, name: '荔枝', en: 'litchi'}, 
       {id: 6, name: '樱桃', en: 'cherry'}, 
       { id: 7, name: '青枣', },
+      { id: 8, name: '杨桃',},
     ]
   },
   {
