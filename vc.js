@@ -14,7 +14,7 @@ const Fruit = [
       {id: 2, name: '芒果',}, 
       {id: 3, name: '桑葚',}, 
       {id: 4, name: '草莓', en: 'strawberry'}, 
-      {id: 5, name: '荔枝', en: 'litchi'}, 
+      // {id: 5, name: '荔枝', en: 'litchi'}, 
       {id: 6, name: '樱桃', en: 'cherry'}, 
       { id: 7, name: '青枣', },
       { id: 8, name: '杨桃',},
@@ -36,6 +36,7 @@ const Fruit = [
       { id: 11, name: '火龙果', en: 'dragonfruit'}, 
       { id: 12, name: '莲雾', },
       { id: 13, name: '杨梅', },
+      { id: 14, name: '荔枝', en: 'litchi'},
       
     ]
   },
