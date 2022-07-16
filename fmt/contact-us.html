@@ -11,13 +11,44 @@
 <body>
   <section id="app">
     <article class="container">
-      <header class="header">FMT</header>
+      <header class="header">{{shopInfo.name}}</header>
       <nav class="container-fluid">
         <a class="nav-item" href="./index.html"><div class="nav-a">SHOP</div></a>
         <a class="nav-item" href="./contact-us.html"><div class="nav-a nav-active">CONTACT US</div></a>
       </nav>
-      <h1 class="shop-name">FIND MY TASTE</h1>
+      <h1 class="shop-name">{{showCompanyName}}</h1>
     </article>
   </section>
+
+
+  <script src="./js/vue.js"></script>
+  <script src="./js/data.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        timer: null,
+        showCompanyName: '',
+        navIndex: 0,
+        shopInfo: shopInfo
+      },
+      mounted() {
+        let index = 1;
+        this.showCompanyName = shopInfo.company.substr(0,index)
+        this.timer = setInterval(() => {
+          if(index > shopInfo.company.length) {
+            clearInterval(this.timer)
+          }
+          this.showCompanyName = shopInfo.company.substr(0,++index)
+          console.log(800 - index*80)
+        }, 800 - index*80);
+      },
+      methods: {
+        goDetails(id) {
+          window.location.href = `./clothes-detail.html?id=${id}`
+        }
+      }
+    })
+  </script>
 </body>
 </html>
