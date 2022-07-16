@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: #111;
+}
+.header {
+  /* width: 100%; */
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.nav-item {
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0px;
+  padding: 0 25px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+/* 商品 */
+.shop-name {
+  height: 70vh;
+  display: flex;
+  font-size: 60px;
+  justify-content: center;
+  align-items: center;
+}
+.item-img {
+  width: 100%;
+}
+.main {
+  margin: 60px auto 0;
+  width: 1400px;
+}
+@media (min-width: 576px) {
+  .main {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1500px) {
+  .main {
+    max-width: 1400px;
+  }
+}
+.clothes-name {
+  text-align: center;
+  padding-top: 20px;
+}
+.clothes-price {
+  line-height: 38px;
+  text-align: center;
+  font-size: 12px;
+}
+.clothes-btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: 0 auto 30px;
+  text-align: center;
+  padding: 4px 8px;
+  background: #666666;
+  color: #fff;
+  border-radius: 4px;
+}

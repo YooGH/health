@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FMT</title>
+  <link rel="stylesheet" href="./css/bootstrap-grid.css">
+  <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+  <section id="app">
+    <header class="header">FMT</header>
+    <nav class="container-fluid">
+      <a class="nav-item" href="./index.html">SHOP</a>
+      <a class="nav-item" href="./clothes.html">CLOTHES</a>
+    </nav>
+    <article class="main">
+      <div class="row">
+        <section v-for="item of clothesList" class="col-6 col-md-4">
+          <img class="item-img" :src="item.img" alt="" />
+          <div class="clothes-name">{{item.name}}</div>
+          <div class="clothes-price">￥{{item.price}}</div>
+          <button class="clothes-btn">DETAILS</button>
+        </section>
+      </div>
+  
+    </article>
+  </section>
+
+
+
+  <script src="./js/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        clothesList: [
+          { id: 1, name: 'clothes1', img: './img/1.jpg', details: '', price: '6,88.00'},
+          { id: 2, name: 'clothes2', img: './img/2.jpg', details: '', price: '7,99.00'},
+          { id: 3, name: 'clothes3', img: './img/3.jpg', details: '', price: '4,44.00'},
+          { id: 4, name: 'clothes4', img: './img/4.jpg', details: '', price: '1,99.00'},
+          { id: 5, name: 'clothes5', img: './img/5.jpg', details: '', price: '8,99.00'},
+          { id: 6, name: 'clothes6', img: './img/6.jpg', details: '', price: '1,99.00'},
+          { id: 7, name: 'clothes7', img: './img/7.jpg', details: '', price: '1,88.00'},
+          { id: 8, name: 'clothes8', img: './img/8.jpg', details: '', price: '7,66.00'},
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
