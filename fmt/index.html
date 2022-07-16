@@ -9,11 +9,49 @@
   <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-  <header class="header">FMT</header>
-  <nav class="container-fluid">
-    <a class="nav-item" href="./index.html">SHOP</a>
-    <a class="nav-item" href="./clothes.html">CLOTHES</a>
-  </nav>
-  <h1 class="shop-name">FIND MY TASTE</h1>
+  <section id="app">
+    <article class="container">
+      <header class="header">FMT</header>
+      <nav class="container-fluid">
+        <a class="nav-item" href="./index.html">SHOP</a>
+        <a class="nav-item" href="./contact-us.html">CONTACT US</a>
+      </nav>
+      <div class="clothes-main row">
+        <section v-for="item of clothesList" @click="goDetails(item.id)" class="clothes-item col-6 col-md-4">
+          <img class="item-img" :src="item.img" alt="" />
+          <div class="clothes-name">{{item.name}}</div>
+          <div class="clothes-price">￥{{item.price}}</div>
+          <!-- <button class="clothes-btn">DETAILS</button> -->
+        </section>
+      </div>
+  
+    </article>
+  </section>
+
+
+
+  <script src="./js/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        clothesList: [
+          { id: 1, name: 'clothes1', img: './img/1.jpg', details: '', price: '6,88.00'},
+          { id: 2, name: 'clothes2', img: './img/2.jpg', details: '', price: '7,99.00'},
+          { id: 3, name: 'clothes3', img: './img/3.jpg', details: '', price: '4,44.00'},
+          { id: 4, name: 'clothes4', img: './img/4.jpg', details: '', price: '1,99.00'},
+          { id: 5, name: 'clothes5', img: './img/5.jpg', details: '', price: '8,99.00'},
+          { id: 6, name: 'clothes6', img: './img/6.jpg', details: '', price: '1,99.00'},
+          { id: 7, name: 'clothes7', img: './img/7.jpg', details: '', price: '1,88.00'},
+          { id: 8, name: 'clothes8', img: './img/8.jpg', details: '', price: '7,66.00'},
+        ]
+      },
+      methods: {
+        goDetails(id) {
+          location.href
+        }
+      }
+    })
+  </script>
 </body>
 </html>

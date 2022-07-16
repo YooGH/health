@@ -3,23 +3,48 @@
   margin: 0;
   color: #111;
 }
+#app {
+  margin-top: 60px;
+}
+@media (max-width: 576px) {
+  #app {
+    margin-top: 30px;
+  }
+}
 .header {
-  /* width: 100%; */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
   font-size: 30px;
   font-weight: bold;
   text-align: center;
 }
+@media (max-width: 576px) {
+  .header {
+    font-size: 24px;
+    top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    top: 60px;
+  }
+}
+
 .nav-item {
   color: #000000;
   font-size: 15px;
   letter-spacing: 0px;
   padding: 0 25px;
-  font-weight: bold;
+  /* font-weight: bold; */
   height: 40px;
   line-height: 40px;
   text-decoration: none;
   display: table-cell;
   vertical-align: middle;
+}
+.nav-a:hover{
+  border-bottom: 1px solid #333;
 }
 /* 商品 */
 .shop-name {
@@ -28,6 +53,15 @@
   font-size: 60px;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 576px) {
+  .shop-name {
+    font-size: 30px;
+  }
+}
+
+.clothes-item {
+  cursor: pointer;
 }
 .item-img {
   width: 100%;
@@ -63,6 +97,9 @@
   .main {
     max-width: 1400px;
   }
+}
+.clothes-main {
+  margin-top: 40px;
 }
 .clothes-name {
   text-align: center;
