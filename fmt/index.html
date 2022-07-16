@@ -13,8 +13,8 @@
     <article class="container">
       <header class="header">FMT</header>
       <nav class="container-fluid">
-        <a class="nav-item" href="./index.html">SHOP</a>
-        <a class="nav-item" href="./contact-us.html">CONTACT US</a>
+        <a class="nav-item" href="./index.html" @click="navFn(0)" ><div class="nav-a nav-active">SHOP</div></a>
+        <a class="nav-item" href="./contact-us.html" @click="navFn(1)"><div class="nav-a">CONTACT US</div></a>
       </nav>
       <div class="clothes-main row">
         <section v-for="item of clothesList" @click="goDetails(item.id)" class="clothes-item col-6 col-md-4">
@@ -29,16 +29,19 @@
   </section>
 
 
-
   <script src="./js/vue.js"></script>
   <script src="./js/data.js"></script>
   <script>
     new Vue({
       el: '#app',
       data: {
+        navIndex: 0,
         clothesList: clothesList
       },
       methods: {
+        navFn() {
+
+        },
         goDetails(id) {
           window.location.href = `./clothes-detail.html?id=${id}`
         }

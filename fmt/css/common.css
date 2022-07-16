@@ -43,8 +43,22 @@
   display: table-cell;
   vertical-align: middle;
 }
-.nav-a:hover{
-  border-bottom: 1px solid #333;
+
+.nav-active {
+  position: relative;
+}
+.nav-active:before {
+  content:'';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #333;
+}
+.nav-active:hover {
+  width: 100%;
+  transition: width 1s;
 }
 /* 商品 */
 .shop-name {
@@ -62,6 +76,9 @@
 
 .clothes-item {
   cursor: pointer;
+}
+.clothes-item:hover {
+  opacity: 0.5;
 }
 .item-img {
   width: 100%;
